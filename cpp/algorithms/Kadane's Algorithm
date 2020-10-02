@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int  max(int a, int b)
+{
+	int m = a>b ? a : b;
+	return m;
+}
+
+int main()
+{
+	vector<int> a;
+	int n, i, sum = 0, max_sum = 0, x;
+	cin>>n;
+	for(i=0; i<n; i++)
+	{
+	 	cin>>x;
+	 	a.push_back(x);
+	}
+	for(i=0; i<n; i++)
+	{
+		sum = max(a[i], sum+a[i]);
+		max_sum = max(sum, max_sum);
+	}
+	cout<<"Max sub array sum: "<<max_sum;
+}
